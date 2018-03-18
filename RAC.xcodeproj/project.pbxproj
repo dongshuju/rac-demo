@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		56E8C0298F850AC1B4C09F88 /* Pods_RAC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 245D924C3B3FEC654F8A1F48 /* Pods_RAC.framework */; };
+		8322CB4F205E0507006223F6 /* document in Resources */ = {isa = PBXBuildFile; fileRef = 8322CB4E205E0507006223F6 /* document */; };
 		836B3FD520552893001FE560 /* RACCaseFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 836B3FD420552893001FE560 /* RACCaseFactory.m */; };
 		836B3FD820552936001FE560 /* RACBaseUseViewCntroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 836B3FD720552936001FE560 /* RACBaseUseViewCntroller.m */; };
 		836B3FDB2055295D001FE560 /* RACKVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836B3FDA2055295D001FE560 /* RACKVOViewController.m */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		245D924C3B3FEC654F8A1F48 /* Pods_RAC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RAC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8322CB4E205E0507006223F6 /* document */ = {isa = PBXFileReference; lastKnownFileType = folder; path = document; sourceTree = "<group>"; };
 		836B3FD320552893001FE560 /* RACCaseFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACCaseFactory.h; sourceTree = "<group>"; };
 		836B3FD420552893001FE560 /* RACCaseFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACCaseFactory.m; sourceTree = "<group>"; };
 		836B3FD620552936001FE560 /* RACBaseUseViewCntroller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACBaseUseViewCntroller.h; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		8383A4FA2053C8B700E98E6C = {
 			isa = PBXGroup;
 			children = (
+				8322CB4E205E0507006223F6 /* document */,
 				8383A5052053C8B700E98E6C /* RAC */,
 				8383A5212053C8B700E98E6C /* RACTests */,
 				8383A52C2053C8B700E98E6C /* RACUITests */,
@@ -320,6 +323,7 @@
 				8383A5162053C8B700E98E6C /* LaunchScreen.storyboard in Resources */,
 				8383A5132053C8B700E98E6C /* Assets.xcassets in Resources */,
 				8383A50E2053C8B700E98E6C /* Main.storyboard in Resources */,
+				8322CB4F205E0507006223F6 /* document in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
