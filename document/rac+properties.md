@@ -9,7 +9,7 @@
 * If userName and password changed, will call flattenMap block;
 * if both userName and password changed, will combine two changes as one, only call flattenMap block once.
 
-
+```
 [[[RACSignal
 combineLatest:@[ [RACObserve(self, userName) ignore:nil],
 [RACObserve(self, password) ignore:nil] ]]
