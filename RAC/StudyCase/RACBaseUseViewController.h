@@ -1,5 +1,5 @@
 //
-//  RACBaseUseViewCntroller.h
+//  RACBaseUseViewController.h
 //  RAC
 //
 //  Created by shujucn on 11/03/2018.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RACBaseUseViewCntroller : UIViewController
+@interface RACBaseUseViewController : UIViewController
 
 @end

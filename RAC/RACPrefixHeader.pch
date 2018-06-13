@@ -1,0 +1,17 @@
+//
+//  RACPrefixHeader.pch
+//  RAC
+//
+//  Created by shujucn on 2018/4/27.
+//  Copyright © 2018 shuju. All rights reserved.
+//
+
+#ifndef RACPrefixHeader_pch
+#define RACPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <ReactiveObjC/ReactiveObjC.h>
+
+#endif /* RACPrefixHeader_pch */

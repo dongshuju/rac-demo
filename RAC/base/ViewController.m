@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "RACBaseUseViewController.h"
 
 static NSString *cellReuseID = @"RAC_DEMO_BASE_CELL";
 
@@ -42,7 +43,6 @@ static NSString *cellReuseID = @"RAC_DEMO_BASE_CELL";
 }
 
 
-
 #pragma MARk datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.source.count;
@@ -62,7 +62,13 @@ static NSString *cellReuseID = @"RAC_DEMO_BASE_CELL";
 }
 
 #pragma MARK delegate
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        RACBaseUseViewController *baeseVc = [[RACBaseUseViewController alloc] init];
+        [self.navigationController pushViewController:baeseVc animated:YES];
+    } 
+    
+}
 
 
 
