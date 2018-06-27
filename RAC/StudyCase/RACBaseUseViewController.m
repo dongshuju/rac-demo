@@ -29,24 +29,37 @@
 }
 
 -(void)creatSignal {
-    RACSignal *signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+  RACSignal *signal = [[[[[RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
         [subscriber sendNext:@"hello 123456"];
         [subscriber sendCompleted];
         return nil;
+    }] map:^id _Nullable(id  _Nullable value) {
+      NSLog(@"--- map01 %@", value);
+      return @"map value 001";
+    }] map:^id _Nullable(id  _Nullable value) {
+      NSLog(@"--- map02 %@", value);
+      return @"map value 002";
+    }] flattenMap:^__kindof RACSignal * _Nullable(id  _Nullable value) {
+      NSLog(@"--- flatten01 map %@", value);
+      return [[RACSignal return:@"flatten map01 new value"] logCompleted];
+    }] flattenMap:^__kindof RACSignal * _Nullable(id  _Nullable value) {
+      NSLog(@"--- flatten02 map %@", value);
+      return [[RACSignal return:@"flatten map02 new value"] logCompleted];
     }];
-    
+  
+  
     [signal subscribeNext:^(id  _Nullable x) {
         NSLog(@"--- RACBase: %@", x);
+      NSLog(@"%@", signal.description);
     } completed:^{
         NSLog(@"--- RACBase: complete");
     }];
-    
-    
+  
     //创建热信号
     RACSubject *subject = [RACSubject subject];
     [subject sendNext:@"Signal 1"];    //立即发送1
     NSLog(@"---Signal 1 sended");
-    
+
     [[RACScheduler mainThreadScheduler] afterDelay:0.5 schedule:^{
         [subject sendNext:@"Signal 2"];      //0.5秒后发送2
         NSLog(@"---Signal 2 sended");
@@ -67,6 +80,34 @@
     }];
 }
 
+
+-(void)mapFlattenMap {
+  RACSignal *signal = [[[[[RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+    [subscriber sendNext:@"hello 123456"];
+    [subscriber sendCompleted];
+    return nil;
+  }] map:^id _Nullable(id  _Nullable value) {
+    NSLog(@"--- map01 %@", value);
+    return @"map value 001";
+  }] map:^id _Nullable(id  _Nullable value) {
+    NSLog(@"--- map02 %@", value);
+    return @"map value 002";
+  }] flattenMap:^__kindof RACSignal * _Nullable(id  _Nullable value) {
+    NSLog(@"--- flatten01 map %@", value);
+    return [[RACSignal return:@"flatten map01 new value"] logCompleted];
+  }] flattenMap:^__kindof RACSignal * _Nullable(id  _Nullable value) {
+    NSLog(@"--- flatten02 map %@", value);
+    return [[RACSignal return:@"flatten map02 new value"] logCompleted];
+  }];
+  
+  
+  [signal subscribeNext:^(id  _Nullable x) {
+    NSLog(@"--- RACBase: %@", x);
+    NSLog(@"%@", signal.description);
+  } completed:^{
+    NSLog(@"--- RACBase: complete");
+  }];
+}
 
 
 @end
